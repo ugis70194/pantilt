@@ -10,11 +10,11 @@ while True:
   Y = int(Y)
 
   r = math.sqrt((X-1) ** 2 + (Y - 1) ** 2) 
+  eps = 0.000001
 
-  alpha = math.atan((Y-1)/(X-1+0.000001)) * (180/math.acos(-1)) 
+  alpha = math.atan((Y-1)/(X-1+eps)) * (180/math.acos(-1)) 
   
-  eps = 1.000001
-  theta = -90/(math.log(1/(r+1)) - eps)
+  theta = 90/(1 - math.log(1/(r+1)) - eps)
 
   print(alpha)
   print(theta)
