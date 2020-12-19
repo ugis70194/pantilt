@@ -28,3 +28,39 @@ while True:
 
   pantilthat.pan(alpha)
   pantilthat.tilt(theta)
+
+  
+'''
+import threading
+import time
+
+alpha = 0
+theta = 0
+
+def com():
+    global alpha
+    global theta
+    while True:
+        alpha, theta = map(int, input().split())
+
+def main():
+    global alpha
+    global theta
+
+    alpha_now = 0
+    theta_now = 90
+
+    thread1 = threading.Thread(target=com)
+    thread1.start()
+
+    while True:
+        alpha_nxt = alpha
+        theta_nxt = theta
+        print(str(alpha_now) + ' to ' + str(alpha_nxt))
+        print(str(theta_now) + ' to ' + str(theta_nxt))
+        time.sleep(10)
+        alpha_now = alpha_nxt
+        theta_now = theta_nxt
+
+main()
+'''
